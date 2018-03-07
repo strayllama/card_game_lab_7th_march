@@ -9,9 +9,9 @@ public class Deck {
     public Deck() {
         cards = new ArrayList<>();
 
-        for (Suit each_suit : Suit.values()) {
-            for (Rank each_rank : Rank.values()) {
-                Card new_card = new Card(each_suit, each_rank);
+        for (Suit eachSuit : Suit.values()) {
+            for (Rank eachRank : Rank.values()) {
+                Card new_card = new Card(eachSuit, eachRank);
                 cards.add(new_card);
             }
         }
@@ -31,13 +31,13 @@ public class Deck {
         return cards.get(0);
     }
 
-    public Card[] getDealtCards(int numberOfCards) {
-        Card[] dealtCards = new Card[numberOfCards];
+    public ArrayList<Card> getDealtCards(int numberOfCards) {
+        ArrayList<Card> dealtCards = new ArrayList<>();
 
         Collections.shuffle(this.cards);
 
         for (int i = 0 ; i < (numberOfCards); i++) {
-            dealtCards[i] = cards.get(i);
+            dealtCards.add(cards.get(i));
         }
 
         return dealtCards;

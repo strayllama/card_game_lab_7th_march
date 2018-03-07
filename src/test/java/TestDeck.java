@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -28,11 +30,11 @@ public class TestDeck {
 
     @Test
     public void canGetDealtCards() {
-        Card[] card_array = deck.getDealtCards(52);
-        int size = card_array.length;
+        ArrayList<Card> card_array = deck.getDealtCards(52);
+        int size = card_array.size();
 
         for (int i = 0; i < size; i++){
-            System.out.println(card_array[i].cardInfo());
+            System.out.println(card_array.get(i).cardInfo());
         }
         assertEquals(52, size);
     }

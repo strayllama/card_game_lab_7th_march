@@ -15,30 +15,38 @@ public class Player {
         return this.name;
     }
 
+    public int numberOfCards() {
+        return hand.size();
+    }
+
 
     public void addCard(Card a_card) {
         this.hand.add(a_card);
     }
 
 
-    public Card card1() {
-        return this.hand.get(0);
-    }
-
-    public Card card2() {
-        return this.hand.get(1);
-    }
-
 
     public int getHandValue() {
         int handValue = 0;
-        handValue = (card1().getValue()) + (card2().getValue());
+        for ( int i = 0; i < numberOfCards(); i++) {
+            handValue += hand.get(i).getValue();
+        }
         return handValue;
     }
 
-    public String getHand() {
-        return (card1().cardInfo() + " and " + card2().cardInfo());
+    public String getHandInfo() {
+        String handInfo = "";
+        for ( int i = 0; i < numberOfCards(); i++) {
+            handInfo = handInfo + hand.get(i).cardInfo() + ", ";
+        }
+        return ("Player " + this.name + " has cards: " + handInfo);
     }
+
+
+    public void returnCards() {
+        this.hand = new ArrayList<>();
+    }
+
 
 
 } // end class Player
