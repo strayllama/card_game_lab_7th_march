@@ -26,6 +26,15 @@ public class TestDeck {
         assertTrue(deck_copy.all_cards().contains(randomCard));
     }
 
+    @Test
+    public void canGetDealtCards() {
+        Card[] card_array = deck.getDealtCards(52);
+        int size = card_array.length;
 
+        for (int i = 0; i < size; i++){
+            System.out.println(card_array[i].cardInfo());
+        }
+        assertEquals(52, size);
+    }
 
 } // end class TestDeck

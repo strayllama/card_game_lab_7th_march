@@ -26,10 +26,22 @@ public class Deck {
         return cards;
     }
 
-
     public Card getRandomCard() {
         Collections.shuffle(this.cards);
         return cards.get(0);
     }
+
+    public Card[] getDealtCards(int numberOfCards) {
+        Card[] dealtCards = new Card[numberOfCards];
+
+        Collections.shuffle(this.cards);
+
+        for (int i = 0 ; i < (numberOfCards); i++) {
+            dealtCards[i] = cards.get(i);
+        }
+
+        return dealtCards;
+    }
+
 
 } // end class Deck

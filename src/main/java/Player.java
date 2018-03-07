@@ -3,12 +3,11 @@ import java.util.ArrayList;
 public class Player {
     private String name;
     private ArrayList<Card> hand;
-//    private int handValue;
+    private int score;
 
     public Player(String a_name) {
         this.name = a_name;
         this.hand = new ArrayList<>();
-//        this.handValue = 0;
     }
 
 
@@ -36,4 +35,10 @@ public class Player {
         handValue = (card1().getValue()) + (card2().getValue());
         return handValue;
     }
+
+    public String getHand() {
+        return (card1().cardInfo() + " and " + card2().cardInfo());
+    }
+
+
 } // end class Player

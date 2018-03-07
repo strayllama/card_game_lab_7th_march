@@ -30,6 +30,15 @@ public class TestPlayer {
     }
 
     @Test
+    public void playerHasTwoCards() {
+        player1.addCard(a_card1);
+        player1.addCard(a_card2);
+        String hand = (a_card1.cardInfo() + " and " + a_card2.cardInfo());
+        assertEquals(hand, player1.getHand());
+//        System.out.println(hand);
+    }
+
+    @Test
     public void playerCalcsHandValue() {
         player1.addCard(a_card1);
         player1.addCard(a_card2);
