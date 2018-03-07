@@ -20,4 +20,11 @@ public class Card {
     public int getValue() {
         return this.rank.getValue();
     }
-}
+
+    public String cardInfo() {
+        String card_string = "";
+        card_string = "The " + getRank() + " of " + getSuit();
+        return card_string;
+    }
+
+} // end class Card

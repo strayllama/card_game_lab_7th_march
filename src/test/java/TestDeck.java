@@ -1,33 +1,31 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TestDeck {
 
-    //Deck deck;
-    private ArrayList<Card> test_deck;
+    Deck deck;
 
     @Before
     public void before(){
-        test_deck = new ArrayList<>();
+        deck = new Deck();
     }
 
     @Test
-    public void canMakeDeck() {
-
-        for (Suit each_suit : Suit.values()) {
-            for (Rank each_rank : Rank.values()) {
-//                System.out.println("Each Suit: " + each_suit);
-//                System.out.println("Each Rank: " + each_rank);
-//                System.out.println("");
-                Card new_card = new Card(each_suit, each_rank);
-                test_deck.add(new_card);
-
-            }
-        }
-
-        System.out.println("Deck array: " + test_deck);
+    public void deckIsComplete() {
+        assertEquals(52,deck.deckSize());
     }
+
+    @Test
+    public void canGetRandomCard() {
+        Deck deck_copy = deck;
+        Card randomCard = deck.getRandomCard();
+        System.out.println(randomCard.cardInfo());
+        assertTrue(deck_copy.all_cards().contains(randomCard));
+    }
+
+
 
 } // end class TestDeck
