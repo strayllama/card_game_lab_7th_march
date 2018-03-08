@@ -38,7 +38,6 @@ public class TestPlayer {
         String hand2 = ("Player Dec has cards: " + a_card3.cardInfo() + ", " + a_card4.cardInfo() + ", ");
         assertEquals(hand, player1.getHandInfo());
         assertEquals(hand2, player2.getHandInfo());
-
 //        System.out.println(hand);
     }
 

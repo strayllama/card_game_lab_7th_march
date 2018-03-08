@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -31,10 +30,15 @@ public class Deck {
         return cards.get(0);
     }
 
+    public ArrayList<Card> shuffleCards() {
+        Collections.shuffle(this.cards);
+        return cards;
+    }
+
     public ArrayList<Card> getDealtCards(int numberOfCards) {
         ArrayList<Card> dealtCards = new ArrayList<>();
 
-        Collections.shuffle(this.cards);
+        shuffleCards();
 
         for (int i = 0 ; i < (numberOfCards); i++) {
             dealtCards.add(cards.get(i));
@@ -42,6 +46,8 @@ public class Deck {
 
         return dealtCards;
     }
+
+
 
 
 } // end class Deck

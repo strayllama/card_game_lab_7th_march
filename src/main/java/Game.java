@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Game {
     private Deck deck;
@@ -58,7 +56,6 @@ public class Game {
     }
 
     public Player getWinner() {
-        HashMap<Player, Integer> handScores = new HashMap<>();
         Player winner = players.get(0);
         Boolean draw = false;
 

@@ -5,6 +5,4 @@ public enum Suit {
     CLUBS;
 
     // Constructor is automatic, and private.
-
-
 }
